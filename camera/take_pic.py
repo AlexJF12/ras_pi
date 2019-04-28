@@ -1,8 +1,16 @@
-from picamera import PiCamera
-from time import sleep
+# take pic, save with  timestamp
 
+from picamera import PiCamera
+import datetime as dt
+
+# init camera
 camera = PiCamera()
 
-camera.start_preview()
-sleep(15)
-camera.capture('Documents/Pictures/pic_')
+#set timestamp str
+ts_str = str(dt.datetime.now().strftime("%Y_%m_%d-%H:%M:%S"))
+
+#set path to save pic
+path_str = 'Documents/Pictures/pic_{}'.format(ts_str)
+
+#take pic, save in rasberry_pi directory
+camera.capture(path_str)
