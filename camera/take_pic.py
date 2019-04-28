@@ -7,10 +7,10 @@ import datetime as dt
 camera = PiCamera()
 
 #set timestamp str
-ts_str = str(dt.datetime.now().strftime("%Y_%m_%d-%H:%M:%S"))
+ts_str = str(dt.datetime.now().strftime("%Y_%m_%d-%H_%M_%S"))
 
 #set path to save pic
-path_str = 'Documents/Pictures/pic_{}'.format(ts_str)
+path_str = '/home/pi/Pictures/pic_{}.jpg'.format(ts_str)
 
 #take pic, save in rasberry_pi directory
 camera.capture(path_str)
