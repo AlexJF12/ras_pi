@@ -1,4 +1,5 @@
 from picamera import PiCamera
+import datetime as dt
 from os import system
 
 # set up directory, remove all files in it
