@@ -16,3 +16,18 @@ path_str = '/home/pi/Pictures/pic_{}.jpg'.format(ts_str)
 camera.capture(path_str)
 
 print('pic taken')
+
+# upload pic to aws s3
+
+import boto3
+
+s3 = boto3.resource('s3')
+
+# choose which bucket to go to
+bucket_raspi = s3.Bucket('raspi-aws')
+
+# choose data, upload a file here
+data = open(path_str, 'rb')
+bucket_raspi.put_object(Key='pictures/pic_{}.jpg'.format(ts_str), Body=data)
+
+print('uploaded')
