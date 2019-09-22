@@ -28,6 +28,6 @@ bucket_raspi = s3.Bucket('raspi-aws')
 
 # choose data, upload a file here
 data = open(path_str, 'rb')
-bucket_raspi.put_object(Key='pictures/pic_{}.jpg'.format(ts_str), Body=data)
+bucket_raspi.put_object(Key='pic_15_min/pic_{}.jpg'.format(ts_str), Body=data)
 
 print('uploaded')
