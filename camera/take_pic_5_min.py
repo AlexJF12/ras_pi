@@ -1,4 +1,4 @@
-# take pic, save with  timestamp
+# take pic, save to every_five_min
 
 from picamera import PiCamera
 import datetime as dt
