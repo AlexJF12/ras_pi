@@ -30,3 +30,6 @@ with picamera.PiCamera() as camera:
 
     # take pic
     camera.capture(path_str)
+
+    # print filename
+    print(path_str)
