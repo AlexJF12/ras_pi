@@ -17,10 +17,10 @@ with picamera.PiCamera() as camera:
     camera.awb_mode = 'off'
     camera.awb_gains = g
 
-    # camera.annotate_size = 24
+    camera.annotate_text_size = 24
     # camera.annotate_foreground = picamera.Color('black')
     # camera.annotate_background = picamera.Color('white')
-    camera.annotate_text = str(dt.datetime.now().strftime("%Y-%m-%d-%H:M:S"))
+    camera.annotate_text = str(dt.datetime.now().strftime("%Y-%m-%d-%H:%M:%S"))
 
     #set timestamp str
     ts_str = str(dt.datetime.now().strftime("%Y%m%d-%H%M%S"))
