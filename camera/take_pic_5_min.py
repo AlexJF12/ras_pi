@@ -1,6 +1,7 @@
 # take pic, save to every_five_min
 
-from picamera import PiCamera
+import picamera
+# from picamera import Color
 import datetime as dt
 import time
 
@@ -17,8 +18,8 @@ with picamera.PiCamera() as camera:
     camera.awb_gains = g
 
     camera.annotate_size = 24
-    camera.annotate_foreground = Color('black')
-    camera.annotate_background = Color('white')
+    camera.annotate_foreground = picamera.Color('black')
+    camera.annotate_background = picamera.Color('white')
     camera.annotate_text = str(dt.datetime.now().strftime("%Y-%m-%d-%H:M:S"))
 
     #set timestamp str
