@@ -2,22 +2,28 @@ import datetime as dt
 import pathlib
 import imageio
 
-# get all filenames
-img_files = []
 
-dt = str(dt.datetime.now().strftime("%Y%m%d"))
+def pic_to_mp4(dt = str((dt.datetime.now() - dt.timedelta(days=1)).strftime("%Y%m%d"))):
+    """
+    grab all of yesterday's pictures and converts it to a mp4
+    """
 
-# define the path
-currentDirectory = pathlib.Path('~/Pictures/every_five_min')
+    # define the path
+    currentDirectory = pathlib.Path('~/Pictures/every_five_min')
 
-for currentFile in currentDirectory.glob(f'*{dt}*'):
-    img_files.append(currentFile)
+    # get all filenames
+    img_files = []
 
-img_files.sort()
+    for currentFile in currentDirectory.glob(f'*{dt}*'):
+        img_files.append(currentFile)
 
-# make video
-images = []
-for filename in img_files:
-    images.append(imageio.imread(filename))
+    img_files.sort()
 
-imageio.mimsave(f'~/Pictures/daily_vid/{dt}_vid.mp4', images)
+    # make video
+    images = []
+    for filename in img_files:
+        images.append(imageio.imread(filename))
+
+    imageio.mimsave(f'~/Pictures/daily_vid/{dt}_vid.mp4', images)
+
+pic_to_mp4()

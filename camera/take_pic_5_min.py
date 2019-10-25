@@ -6,7 +6,7 @@ import datetime as dt
 import time
 
 with picamera.PiCamera() as camera:
-    camera.resolution = (640, 360)
+    camera.resolution = (1280, 720)
     camera.framerate = 30
     # Wait for the automatic gain control to settle
     time.sleep(3)
