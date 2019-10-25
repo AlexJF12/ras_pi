@@ -14,7 +14,7 @@ def pic_to_mp4(dt = str((dt.datetime.now() - dt.timedelta(days=1)).strftime("%Y%
     # get all filenames
     img_files = []
 
-    for currentFile in currentDirectory.glob(f'*{dt}*'):
+    for currentFile in currentDirectory.glob('*' + dt + '*'):
         img_files.append(currentFile)
 
     img_files.sort()
