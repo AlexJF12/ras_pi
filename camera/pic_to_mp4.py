@@ -24,6 +24,6 @@ def pic_to_mp4(dt = str((dt.datetime.now() - dt.timedelta(days=1)).strftime("%Y%
     for filename in img_files:
         images.append(imageio.imread(filename))
 
-    imageio.mimsave(f'~/Pictures/daily_vid/{dt}_vid.mp4', images)
+    imageio.mimsave('~/Pictures/daily_vid/' + 'dt' + '_vid.mp4', images)
 
 pic_to_mp4()
