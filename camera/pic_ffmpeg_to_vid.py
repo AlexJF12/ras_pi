@@ -7,6 +7,10 @@ import os
 
 date_for_vid = str((dt.datetime.now() - dt.timedelta(days=1)).strftime("%Y%m%d"))
 
-command_line_code = "ffmpeg -framerate 10 -f image2 -pattern_type glob -i 'pic_" + date_for_vid + "-*.jpg' ~/daily_vids/" + date_for_vid + "}.mp4"
+# ffmpeg -framerate 10 -f image2 -pattern_type glob -i 'pic_20191108-*.jpg' ~/Documents/test.mp4
+
+command_line_code = "ffmpeg -framerate 10 -f image2 -pattern_type glob -i 'pic_" + date_for_vid + "-*.jpg' ~/Documents/daily_vids/" + date_for_vid + "}.mp4"
+
+print(command_line_code)
 
 os.system(command_line_code)
