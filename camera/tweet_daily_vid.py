@@ -19,8 +19,8 @@ twitter = Twython(
 
 date_for_vid = str((dt.datetime.now() - dt.timedelta(days=1)).strftime("%Y%m%d"))
 
-file_name = '~/Documents/daily_vids/' + date_for_vid + '_vid.mp4'
-print(file_name)
+file_name = 'home/pi/Documents/daily_vids/' + date_for_vid + '_vid.mp4'
+print('this is the file name:', file_name)
 
 video = open(file_name, 'rb')
 
