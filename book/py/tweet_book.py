@@ -1,11 +1,13 @@
 import pandas as pd
-
+from pathlib import Path
 import json
 
 # for twitter
 from twython import Twython
 
-with open('../auth/twitter_access_keys.json') as json_file:
+p = Path('.')
+
+with open(p / 'auth' / 'twitter_access_keys.json') as json_file:
     twitter_keys = json.load(json_file)
 
 # auth
@@ -17,7 +19,7 @@ twitter = Twython(
 )
 
 # book df
-df = pd.read_csv('~/Documents/dev/book/old_man_and_the_sea_timestamps.csv')
+df = pd.read_csv(p / 'data' / 'old_man_and_the_sea_timestamps.csv')
 
 # get next paragraph to tweet
 df_nontweeted = (
@@ -37,4 +39,4 @@ for text in list_of_tweet_text:
 
 # save timestamp of when tweet was sent and save new csv
 df.loc[df.p_num == next_p_to_tweet, "tweeted_timestamp"] = pd.Timestamp.now()
-df.to_csv('~/Documents/dev/book/old_man_and_the_sea_timestamps.csv')
+df.to_csv(p / 'data' / 'old_man_and_the_sea_timestamps.csv')
