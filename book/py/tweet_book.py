@@ -5,7 +5,8 @@ import json
 # for twitter
 from twython import Twython
 
-p = Path('.')
+# set path to book/
+p = Path(__file__).resolve().parent.parent
 
 with open(p / 'auth' / 'twitter_access_keys.json') as json_file:
     twitter_keys = json.load(json_file)
